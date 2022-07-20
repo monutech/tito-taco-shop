@@ -23,3 +23,10 @@ def detail(request, product_id):
     return HttpResponse(f"You are looking at {product.name}. "
                         "Would you like to buy it? It's pretty awesome."
                         )
+
+
+def get_image(request, product_id, filename):
+    print(f"GETTING IMAGE: {filename}")
+    product = Product.objects.get(id=product_id)
+    image_data = product.image.open()
+    return HttpResponse(image_data, content_type="image/gif")
