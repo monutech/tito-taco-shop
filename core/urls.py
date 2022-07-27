@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('slack/', include('django_slack_oauth.urls')),
     path('integration/', include('integration.urls')),
+    path('products/', include('products.urls'))
 ]
