@@ -16,6 +16,7 @@ def index(request):
 # Create your views here.
 def detail(request, product_id):
     product = Product.objects.get(id=product_id)
+    print(f"PRODUCT INFO: {product.name}\n{product.price}\n{product.description}")
     context = {
         'product': product
     }

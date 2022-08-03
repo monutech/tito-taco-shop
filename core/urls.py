@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import django_cas_ng.views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('account/login/', django_cas_ng.views.LoginView.as_view(), name='cas_ng_login'),
@@ -24,4 +26,4 @@ urlpatterns = [
     # path('slack/', include('django_slack_oauth.urls')),
     path('integration/', include('integration.urls')),
     path('products/', include('products.urls'))
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
