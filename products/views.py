@@ -12,7 +12,13 @@ from django.contrib import messages
 
 def product(request, product_id):
     product = Product.objects.filter(id=product_id).first()
-    return render(request, 'products/base_product.html', {'product': product})
+    context = {'product': product, 'user': request.user}
+    if request.user.is_authenticated:
+        account = bank_account(request.user)
+        context['taco_balance'] = account.total_tacos,
+    else:
+        context['taco_balance'] = 0
+    return render(request, 'products/base_product.html', context)
 
 
 def get_image(request, product_id, filename):
