@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models import Sum
+from django.db.models import Q
 from user.models import User
 
 
@@ -29,7 +30,7 @@ class TacoBank(models.Model):
 
     @property
     def total_given(self):
-        amount = TacoLedger.objects.filter(giver=self.user.unique_id).aggregate(Sum('amount'))
+        amount = TacoLedger.objects.filter(giver=self.user.unique_id, ~Q(receiver=settings.SLACK_BOT_ID)).aggregate(Sum('amount'))
         return amount['amount__sum'] if amount.get('amount__sum') else 0
 
     @property
@@ -39,7 +40,7 @@ class TacoBank(models.Model):
 
     @property
     def total_redeemed(self):
-        amount = TacoLedger.objects.filter(giver=self.user.unique_id, receiver='666').aggregate(Sum('amount'))
+        amount = TacoLedger.objects.filter(giver=self.user.unique_id, receiver=settings.SLACK_BOT_ID).aggregate(Sum('amount'))
         return amount['amount__sum'] if amount.get('amount__sum') else 0
 
     @property
