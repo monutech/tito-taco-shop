@@ -37,3 +37,5 @@ DATABASES = {'default': DEFAULT_CONNECTION}
 
 
 NOTIFICATION_SETTINGS = json.loads(os.environ.get('NOTIFICATION_SETTINGS'))
+
+EMOJI_NAME = os.environ.get('EMOJI_NAME')
