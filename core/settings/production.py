@@ -15,7 +15,6 @@ ORDER_CHANNEL = os.environ.get('ORDER_CHANNEL')
 SLACK_PIPELINES = os.environ.get('SLACK_PIPELINES') # json.loads?
 
 TACO_DAILY_LIMIT = os.environ.get('taco_daily_limit')
-TITO = os.environ.get('TITO')
 
 # Google Cloud Storage
 DEFAULT_FILE_STORAGE = os.environ.get('DEFAULT_FILE_STORAGE')
@@ -44,3 +43,4 @@ EMOJI_NAME = os.environ.get('EMOJI_NAME')
 TEAM_NAME = os.environ.get("TEAM_NAME")
 TEAM_ID = os.environ.get("TEAM_ID")
 SLACK_BOT_TOKEN = os.environ.get("SLACK_BOT_TOKEN")
+SLACK_BOT_ID = os.environ.get("SLACK_BOT_ID")
