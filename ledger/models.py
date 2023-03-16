@@ -30,7 +30,7 @@ class TacoBank(models.Model):
 
     @property
     def total_given(self):
-        amount = TacoLedger.objects.filter(giver=self.user.unique_id, ~Q(receiver=settings.SLACK_BOT_ID)).aggregate(Sum('amount'))
+        amount = TacoLedger.objects.filter(~Q(receiver=settings.SLACK_BOT_ID), giver=self.user.unique_id).aggregate(Sum('amount'))
         return amount['amount__sum'] if amount.get('amount__sum') else 0
 
     @property
