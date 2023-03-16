@@ -39,3 +39,8 @@ DATABASES = {'default': DEFAULT_CONNECTION}
 NOTIFICATION_SETTINGS = json.loads(os.environ.get('NOTIFICATION_SETTINGS'))
 
 EMOJI_NAME = os.environ.get('EMOJI_NAME')
+
+
+TEAM_NAME = os.environ.get("TEAM_NAME")
+TEAM_ID = os.environ.get("TEAM_ID")
+SLACK_BOT_TOKEN = os.environ.get("SLACK_BOT_TOKEN")
