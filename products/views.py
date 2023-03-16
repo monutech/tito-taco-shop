@@ -15,7 +15,7 @@ def product(request, product_id):
     context = {'product': product, 'user': request.user}
     if request.user.is_authenticated:
         account = TacoBank.objects.filter(user=request.user).first()
-        context['taco_balance'] = account.total_tacos,
+        context['taco_balance'] = account.total_tacos
     else:
         context['taco_balance'] = 0
     return render(request, 'products/base_product.html', context)
