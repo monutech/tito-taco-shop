@@ -44,14 +44,14 @@ Thank you for your interest in contributing to Tito Taco Shop! Whether it's impr
 
 ### Branching Strategy
 
-- **Main Branch**: The `main` branch is the primary branch where the stable version of the project resides. Never push changes directly to `main`.
-- **Feature Branches**: Create a new branch for each feature or bugfix from `main`.
+- **master Branch**: The `master` branch is the primary branch where the stable version of the project resides. Never push changes directly to `master`.
+- **Feature Branches**: Create a new branch for each feature or bugfix from `master`.
 
 ### Steps to Submit a PR
 
 1. **Create a New Branch**: 
    ```sh
-   git checkout -b [branch-name] main
+   git checkout -b [branch-name] master
    ```
    
 2. **Make Your Changes**: Implement your changes, enhancements, or bugfixes.
@@ -71,11 +71,11 @@ Thank you for your interest in contributing to Tito Taco Shop! Whether it's impr
 
 6. **Describe Your PR**: Provide a concise title and describe what changes you have made.
 
-7. **Wait for Review**: Maintainers will review your PR and may request changes. Be sure to keep an eye on the comments.
+7. **Wait for Review**: mastertainers will review your PR and may request changes. Be sure to keep an eye on the comments.
 
 ## Questions?
 
-If you have questions or need further guidance, feel free to reach out to the maintainers or raise an issue.
+If you have questions or need further guidance, feel free to reach out to the mastertainers or raise an issue.
 
 ---
 
