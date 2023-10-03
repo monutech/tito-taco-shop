@@ -44,7 +44,7 @@ Thank you for your interest in contributing to Tito Taco Shop! Whether it's impr
 
 ### Branching Strategy
 
-- **master Branch**: The `master` branch is the primary branch where the stable version of the project resides. Never push changes directly to `master`.
+- **Master Branch**: The `master` branch is the primary branch where the stable version of the project resides. Never push changes directly to `master`.
 - **Feature Branches**: Create a new branch for each feature or bugfix from `master`.
 
 ### Steps to Submit a PR
