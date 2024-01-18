@@ -38,4 +38,5 @@ class LedgerTests(TestCase):
 
     def tearDown(self):
         TacoLedger.objects.filter(giver=self.giver.unique_id).delete()
+        TacoLedger.objects.filter(receiver=self.receiver.unique_id).delete()
 
