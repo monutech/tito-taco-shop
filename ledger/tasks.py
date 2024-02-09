@@ -10,7 +10,9 @@ def record_transaction(data):
     Record taco transactions.
     """
     giver = data.get('giver_id')
-    tacos_given_today = TacoLedger.objects.filter(giver=giver, timestamp__date=date.today().day).aggregate(Sum('amount'))
+    tacos_given_today = TacoLedger.objects.filter(giver=giver, timestamp__day=date.today().day).aggregate(Sum('amount')).get('amount_sum')
+    if not tacos_given_today:
+        tacos_given_today = 0
     transaction_amount = data.get('tacos')
     daily_limit = settings.TACO_DAILY_LIMIT
     if tacos_given_today >= daily_limit:
